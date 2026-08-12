@@ -21,7 +21,7 @@ rl.on('line', (command) => {
       console.log(`${name} is a shell builtin`);
     }else
     {
-      console.log(`not found`);
+      console.log(`${name}: not found`);
     }   
   }
   else
