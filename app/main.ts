@@ -15,9 +15,9 @@ rl.on('line', (command) => {
   }else if(command.startsWith("echo")){
     console.log(command.slice(5));
   }else if(command.sartsWith("type")){
-    const name = command.slice(5)     ;
+    const name = command.slice(5);
     if(builtins.includes(name)){
-      console.log(`${command} is a shell builtin`);
+      console.log(`${name} is a shell builtin`);
     }   
   }
   else
