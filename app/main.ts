@@ -9,10 +9,10 @@ const rl = createInterface({
 // TODO: Uncomment the code below to pass the first stage
 rl.prompt();
 rl.on('line', (command) => {
-  console.log(`${command}: command not found`);
-  rl.prompt();
-  if (command === "exit"){
+  if(command === "exit"){
     rl.close();
     return;
   }
+  console.log(`${command}: command not found`);
+  rl.prompt();
 });
