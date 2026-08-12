@@ -25,17 +25,18 @@ rl.on('line', (command) => {
     // Check if its executable file
     else{
       const paths = process.env.PATH.split(path.delimiter);
+      let found = false;
       for(const dir of paths){
         const filePath = path.join(dir, name);
         try{
           fs.accessSync(filePath, fs.constants.X_OK);
           console.log(`${name} is ${filePath}`);
           break;
-        }catch{
-          
-        }
+        }catch{}
       }
-
+      if(!found){
+        console.log(`${name}: not found`);
+      }
     }  
   }
   else
