@@ -36,8 +36,9 @@ rl.on('line', (command) => {
       }
       if(!found){
         console.log(`${name}: not found`);
+        rl.prompt();
       }
-      rl.prompt();
+      
     }  
   }
   else
