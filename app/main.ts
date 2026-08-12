@@ -3,7 +3,7 @@ import { createInterface } from "readline";
 const rl = createInterface({
   input: process.stdin,
   output: process.stdout,
-  prompt: "$ ",
+  prompt: "$",
 });
 
 const builtins=["echo", "exit", "type"];
@@ -21,6 +21,6 @@ rl.on('line', (command) => {
     }   
   }
   else
-    {console.log(`${command}:command not found`);}
+    {console.log(`${command}: command not found`);}
   rl.prompt();
 });
