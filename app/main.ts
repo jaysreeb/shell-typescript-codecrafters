@@ -32,7 +32,7 @@ rl.on('line', (command) => {
           console.log(`${name} is ${filePath}`);
           break;
         }catch{
-          console.log(`${command}: not found`);
+          
         }
       }
 
