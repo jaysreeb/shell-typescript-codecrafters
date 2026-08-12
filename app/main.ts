@@ -16,13 +16,17 @@ rl.on('line', (command) => {
     console.log(command.slice(5));
   }else if(command.startsWith("type")){
     const name = command.slice(5);
+
     if(builtins.includes(name)){
       console.log(`${name} is a shell builtin`);
+    }else
+    {
+      console.log(`${command}: not found`);
     }   
   }
   else
     {
-      console.log(`${command}:not found`);
+      console.log(`${command}: not found`);
     }
   rl.prompt();
 });
