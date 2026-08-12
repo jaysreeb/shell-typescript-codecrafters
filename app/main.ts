@@ -14,7 +14,7 @@ rl.on('line', (command) => {
     return;
   }else if(command.startsWith("echo")){
     console.log(command.slice(5));
-  }else if(command.sartsWith("type")){
+  }else if(command.startsWith("type")){
     const name = command.slice(5);
     if(builtins.includes(name)){
       console.log(`${name} is a shell builtin`);
