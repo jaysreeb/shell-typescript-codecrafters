@@ -18,27 +18,26 @@ rl.on('line', (command) => {
     console.log(command.slice(5));
   }else if(command.startsWith("type")){
     const name = command.slice(5);
-
     if(builtins.includes(name)){
       console.log(`${name} is a shell builtin`);
     }
-    // Check if its executable file
     else{
       const paths = process.env.PATH.split(path.delimiter);
       let found = false;
       for(const dir of paths){
-        const filePath = path.join(dir, name);
-        try{
-          fs.accessSync(filePath, fs.constants.X_OK);
-          console.log(`${name} is ${filePath}`);
+        const fullPath = path.join(dir,name);
+        try {
+          fs.accessSync(fullPath, fs.constants.X_OK);
+          console.log(`${name} is ${fullPath}`);
+          found = true;
           break;
-        }catch{}
+        } catch{        
+        }
+        if(!found){
+          console.log(`${name}: not found`);
+        }
       }
-      if(!found){
-        console.log(`${name}: not found`);
-        rl.prompt();
-      }
-      
+
     }  
   }
   else
