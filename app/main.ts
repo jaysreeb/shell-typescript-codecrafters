@@ -33,9 +33,9 @@ rl.on('line', (command) => {
           break;
         } catch{        
         }
-        if(!found){
-          console.log(`${name}: not found`);
-        }
+      }
+      if(!found){
+        console.log(`${name}: not found`);
       }
 
     }  
